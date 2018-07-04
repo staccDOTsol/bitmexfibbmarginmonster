@@ -602,7 +602,7 @@ var requestOptions = {
 };
 
 request(requestOptions, function(error, response, body) {
-  if (error) { console.log(error); }
+  if (error) { if (error.toString().indexOf('Executing at order price ')!= -1){gonext = false;}console.log(error); }
   console.log(body);
 });
 }, 2000);
@@ -707,13 +707,12 @@ var requestOptions = {
   method: verb,
   body: postBody
 };
-
+var gonext = true;
 request(requestOptions, function(error, response, body) {
-  if (error) { console.log(error); }
-  console.log(body);
-});
-}, 2000);
+  if (error) { if (error.toString().indexOf('Executing at order price ')!= -1){gonext = false;}console.log(error); }
+  if (body.toString().indexOf('Executing at order price ')!= -1){gonext = false;}
 
+if (gonext == true){
 setTimeout(function(){
 	
 
@@ -1043,6 +1042,9 @@ request(requestOptions, function(error, response, body) {
 godobuy = true;
 }, 2000);
 }
+});
+}, 2000);
+}
 function sell(k, rate, rate2){ //rate2 for sell is lower
 console.log(k + ' ' + rate + ' ' + rate2);
 var qty = (parseFloat(mBal) / 100000);
@@ -1183,12 +1185,11 @@ var requestOptions = {
   method: verb,
   body: postBody
 };
-
+var gonext = true;
 request(requestOptions, function(error, response, body) {
-  if (error) { console.log(error); }
-  console.log(body);
-});
-}, 2000);
+   if (error) { if (error.toString().indexOf('Executing at order price ')!= -1){gonext = false;}console.log(error); }
+  if (body.toString().indexOf('Executing at order price ')!= -1){gonext = false;}
+if (gonext == true){
 
 setTimeout(function(){
 
@@ -1516,6 +1517,10 @@ request(requestOptions, function(error, response, body) {
   console.log(body);
 }); 
 godosell = true;
+}, 2000);
+}
+
+});
 }, 2000);
 }
 var godosell = true;
