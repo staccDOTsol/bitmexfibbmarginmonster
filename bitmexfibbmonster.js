@@ -1382,7 +1382,14 @@ app.get('/', function (req, res){
 	msg+="Total margin (sats): " + tBal
 	msg+="<br>Current excess margin (sats): " + mBal
 	var percent = -1*(100*(1- (tBal / startBtc)))
-	msg+="<h1>Percent: " + percent.toFixed(2) + '%'
+	msg+="<h1>Percent: " + percent.toFixed(2) + '%</h1>'
+	var diff2 = Math.abs(new Date() - startDate);
+	var minutes = Math.floor((diff2/1000)/60);
+	var hours = ((diff2/1000)/60 / 60).toFixed(8);
+	var percentHr = ((percent) / hours).toFixed(4);
+	msg+="minutes: " + minutes
+	msg+="hours: " + hours
+	msg+="<h1>Percent/hr: " + percentHr + "</h1>"
 	dbo.listCollections().toArray(function(err, collInfos) {
         // collInfos is an array of collection info objects that look like:
         // { name: 'test', options: {} }
