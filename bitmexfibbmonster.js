@@ -458,12 +458,10 @@ godobuy = false;
                             }
 							}
                         }
-						if (d3d.trades.k == 'tSNTUSD'){
-						//console.log(d3d.trades.k);
-						//console.log(d3d.trades.sold1);
-						//console.log(parseFloat(bestBid[d3d.trades.k]))
-						//console.log(d3d.trades.sell1);
-						}
+						console.log(d3d.trades.k);
+						console.log(d3d.trades.sold1);
+						console.log(parseFloat(bestBid[d3d.trades.k]))
+						console.log(d3d.trades.sell1);
 						if (d3d.trades.sold1 == false){
                         if (parseFloat(bestBid[d3d.trades.k]) >= d3d.trades.sell1 && parseFloat(bestAsk[d3d.trades.k]) > 0.00000200) {
                             //////////console.log(d3d.trades.last);
@@ -1530,7 +1528,7 @@ godosell = true;
 }, 2000);
 }
 var godosell = true;
-var godobuy = false;
+var godobuy = true;
 var stoplimits = []
 var gosend = true
 var positions = []
