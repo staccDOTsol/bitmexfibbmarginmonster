@@ -428,7 +428,7 @@ var verb = 'GET',
 														
 
 								});
-							buy(d3d.trades.k, d3d.trades.sell1, d3d.trades.buy1);
+							buy(d3d.trades.k, bestBid[d3d.trades.k], d3d.trades.buy1);
 							}
                         }
 						}
@@ -454,7 +454,7 @@ godobuy = false;
 								});
 							console.log('dobuy2:');
 							console.log(d3d);
-							buy(d3d.trades.k, d3d.trades.buy2, d3d.trades.buy1);
+							buy(d3d.trades.k, bestBid[d3d.trades.k], d3d.trades.buy1);
                             }
 							}
                         }
@@ -486,7 +486,7 @@ godobuy = false;
 														
 
 								});
-						sell(d3d.trades.k, d3d.trades.sell1, d3d.trades.buy1);
+						sell(d3d.trades.k, bestAsk[d3d.trades.k], d3d.trades.sell1);
 							}
                         }
 						}
@@ -512,7 +512,7 @@ godosell = false;
 								});
 							console.log('dosell2:');
 							console.log(d3d);
-						sell(d3d.trades.k, d3d.trades.sell2, d3d.trades.sell1);
+						sell(d3d.trades.k, bestAsk[d3d.trades.k], d3d.trades.sell1);
                             }
 							}
                         }
