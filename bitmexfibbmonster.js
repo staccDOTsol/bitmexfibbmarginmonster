@@ -486,7 +486,7 @@ godobuy = false;
 														
 
 								});
-						sell(d3d.trades.k, d3d.trades.sell1, bestBid[d3d.trades.k);
+						sell(d3d.trades.k, d3d.trades.sell1, bestBid[d3d.trades.k]);
 							}
                         }
 						}
