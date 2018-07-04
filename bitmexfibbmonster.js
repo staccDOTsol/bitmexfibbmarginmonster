@@ -164,7 +164,7 @@ var callback = function(error, data, response) {
 				  lotSizes[symbol] = JSON.parse(body)[d].lotSize
 				  tickSizes[symbol] = JSON.parse(body)[d].tickSize
 				  initMargins[symbol] = JSON.parse(body)[d].initMargin
-				  //console.log(JSON.parse(body)[d]);
+				  console.log(JSON.parse(body)[d]);
 				  //console.log(tickSizes);
 			  }
 		  }
@@ -267,7 +267,6 @@ var tBal = 1;
 setInterval(function(){
 	doOrders()
 }, 60000); */
-doOrders();
  function doOrders(){
 	 
 var verb = 'GET',
@@ -575,7 +574,7 @@ setTimeout(function(){
 var verb = 'POST',
   path = '/api/v1/position/leverage',
   expires = new Date().getTime() + (60 * 1000), // 1 min in the future
-  data = {symbol:k,leverage:1/(initMargins[k] * 10)};
+  data = {symbol:k,leverage:1/(initMargins[k] * 5)};
 
 // Pre-compute the postBody so we can be sure that we're using *exactly* the same body in the request
 // and in the signature. If you don't do this, you might get differently-sorted keys and blow the signature.
@@ -1055,7 +1054,7 @@ setTimeout(function(){
 var verb = 'POST',
   path = '/api/v1/position/leverage',
   expires = new Date().getTime() + (60 * 1000), // 1 min in the future
-  data = {symbol:k,leverage:1/(initMargins[k] * 10)};
+  data = {symbol:k,leverage:1/(initMargins[k] * 5)};
 
 // Pre-compute the postBody so we can be sure that we're using *exactly* the same body in the request
 // and in the signature. If you don't do this, you might get differently-sorted keys and blow the signature.
