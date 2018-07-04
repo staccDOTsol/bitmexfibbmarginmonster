@@ -4,7 +4,7 @@ var BitMexApi = require('bit_mex_api');
 var math = require('mathjs');
 
 const express = require('express');
-var startDate = new Date('2018/07/03 23:08')
+var startDate = new Date('2018/07/04 10:54')
 var path = require('path')
  var startBtc =  670933
 var app = express()
