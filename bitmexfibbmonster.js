@@ -174,7 +174,7 @@ var callback = function(error, data, response) {
 			tBal=mBal = data[0].marginBalance;
 			mBal = data[0].excessMargin;
 			//console.log(data[0]);
-			console.log(mBal);
+			//console.log(mBal);
 			}
 		//console.log('Update on ' + table + ':' + symbol + '. New data:\n', data, '\n');
 		});
@@ -283,12 +283,12 @@ var tBal = 1;
 							}							
 							 }
 							if (go == true){
-							 console.log(d3d)	
+							// console.log(d3d)	
 						if (d3d.trades.bought1 == false){
-							console.log(bestAsk)
-							console.log(d3d.trades.k);
-							console.log(bestAsk[d3d.trades.k]);
-							console.log(d3d.trades.buy1);
+							//console.log(bestAsk)
+							//console.log(d3d.trades.k);
+							//console.log(bestAsk[d3d.trades.k]);
+							//console.log(d3d.trades.buy1);
 				                        if (parseFloat(bestAsk[d3d.trades.k]) <= d3d.trades.buy1 && parseFloat(bestAsk[d3d.trades.k]) > 0.00000200)	 {
                             //////////console.log(d3d.trades.last);
 							//////////console.log(d3d.trades);
@@ -335,6 +335,7 @@ godobuy = false;
 
 								});
 							console.log('dobuy2:');
+							console.log(d3d);
 							buy(d3d.trades.k, d3d.trades.buy2, d3d.trades.buy1);
                             }
 							}
@@ -392,6 +393,7 @@ godosell = false;
 
 								});
 							console.log('dosell2:');
+							console.log(d3d);
 						sell(d3d.trades.k, d3d.trades.sell2, d3d.trades.sell1);
                             }
 							}
