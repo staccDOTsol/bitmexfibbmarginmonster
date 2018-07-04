@@ -646,7 +646,7 @@ console.log(price);
 var lot=price;
 
 if (lot == 0){
-	lot=2;
+	//lot=2;
 }
 var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}).toString();
 	console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
@@ -743,7 +743,7 @@ console.log(price);
 var lot=price;
 
 if (lot == 0){
-	lot=-1;
+	//lot=-1;
 }
 
 	var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}).toString();
@@ -855,7 +855,7 @@ console.log(price);
 var lot=price;
 
 if (lot == 0){
-	lot=-1;
+	//lot=-1;
 }
 var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}).toString();
 	console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
@@ -958,7 +958,7 @@ console.log(price);
 var lot=price;
 
 if (lot == 0){
-	lot=-1;
+	//lot=-1;
 }
 
 	var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}).toString();
@@ -1105,7 +1105,7 @@ console.log(price);
 var lot=price;
 
 if (lot == 0){
-	lot=-2;
+//	lot=-2;
 }
 var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}).toString();
 	console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
@@ -1208,7 +1208,7 @@ console.log(price);
 var lot=price;
 
 if (lot == 0){
-	lot=1;
+//	lot=1;
 }
 	var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}).toString();
 		console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
@@ -1316,7 +1316,7 @@ console.log(price);
 
 var lot=price;
 if (lot == 0){
-	lot=1;
+//	lot=1;
 }
 var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}).toString();
 	console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
@@ -1421,7 +1421,7 @@ console.log(price);
 var lot=price;
 
 if (lot == 0){
-	lot=1;
+	//lot=1;
 }
 var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}).toString();	console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
 
