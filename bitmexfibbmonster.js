@@ -1040,6 +1040,8 @@ request(requestOptions, function(error, response, body) {
 }); 
 godobuy = true;
 }, 2000);
+}else {
+	godobuy = true;
 }
 });
 }, 2000);
@@ -1517,6 +1519,8 @@ request(requestOptions, function(error, response, body) {
 }); 
 godosell = true;
 }, 2000);
+}else {
+	godosell = true;
 }
 
 });
