@@ -392,12 +392,12 @@ var verb = 'GET',
                 }).toArray(function(err, doc3) {
 
                     for (var d in doc3) {
-							console.log(tickSizes	);
+							//console.log(tickSizes	);
 						if (doc3[d].trades){
 							 var d3d = doc3[d];
 							 var go = false;
 							 for (var d in tickSizes){
-								console.log(d);
+								//console.log(d);
 							if (d == d3d.trades.k){
 							go = true;
 							}							
