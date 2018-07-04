@@ -267,6 +267,7 @@ var tBal = 1;
 setInterval(function(){
 	doOrders()
 }, 60000); */
+doOrders();
  function doOrders(){
 	 
 var verb = 'GET',
