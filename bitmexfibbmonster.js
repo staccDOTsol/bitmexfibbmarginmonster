@@ -1434,7 +1434,7 @@ app.get('/', function (req, res){
 		request(requestOptions, function(error, response, body) {
 		  if (error) { console.log(error); }
 		  
-		  console.log((JSON.parse(body)));
+		  //console.log((JSON.parse(body)));
 		  var json = JSON.parse(body);
 		  positions = []
 		  for (var o in json){
@@ -1475,7 +1475,7 @@ var verb = 'GET',
 		request(requestOptions, function(error, response, body) {
 		  if (error) { console.log(error); }
 		  
-		  console.log((JSON.parse(body)));
+		  //console.log((JSON.parse(body)));
 		  var json = JSON.parse(body);
 		  orders = []
 		  for (var o in json){
@@ -1503,7 +1503,7 @@ var verb = 'GET',
 						//////////console.log(doc3[d].trades);
 						if (doc3[d].trades){
 							
-						if (doc3[d].trades.bought1 == false){
+						if (doc3[d].trades.bought1 == false && parseFloat(bestAsk[d3d.trades.k]) > 0.00000200){
 							var sl = {'direction': 'buy1', 'pair' : doc3[d].trades.k, 'stoplimit': doc3[d].trades.buy1, 'currentAsk': bestAsk[doc3[d].trades.k], 'percent': (parseFloat(bestAsk[doc3[d].trades.k]) / parseFloat(doc3[d].trades.buy1))}
 						stoplimits.push(sl);
 							
