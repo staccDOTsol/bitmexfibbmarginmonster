@@ -601,7 +601,7 @@ var requestOptions = {
 };
 
 request(requestOptions, function(error, response, body) {
-  if (error) { if (error.toString().indexOf('Executing at order price ')!= -1){gonext = false;}console.log(error); }
+  if (error) {  console.log('err err err');if (error.toString().indexOf('Executing at order price ')!= -1){gonext = false;}console.log(error); }
   console.log(body);
 });
 }, 2000);
@@ -1188,7 +1188,7 @@ var requestOptions = {
 };
 var gonext = true;
 request(requestOptions, function(error, response, body) {
-   if (error) { if (error.toString().indexOf('Executing at order price ')!= -1){gonext = false;}console.log(error); }
+   if (error) { console.log('err err err');if (error.toString().indexOf('Executing at order price ')!= -1){gonext = false;}console.log(error); }
   if (body.toString().indexOf('Executing at order price ')!= -1){gonext = false;}
 if (gonext == true){
 
