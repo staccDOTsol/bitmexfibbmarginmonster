@@ -330,7 +330,7 @@ var verb = 'GET',
 					for (var d in doc3){
 						for (var o in orders){
 							if (orders[o].symbol == doc3[d].trades.k){
-									console.log(orders[o].ordStatus);
+									//console.log(orders[o].ordStatus);
 								if (orders[o].ordStatus == "Canceled" || orders[o].ordStatus == "Rejected" || orders[o].ordStatus == "Filled"){
 									enablemaybe[doc3[d].trades.k] = true;
 								}
