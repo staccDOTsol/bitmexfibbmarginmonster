@@ -7,7 +7,7 @@ var linkid;
 const express = require('express');
 var startDate = new Date('2018/07/04 19:54')
 var path = require('path')
- var startBtc =  1743281
+ var startBtc =  parseFloat(process.env.startBtc);
 var app = express()
 const tw = require('./trendyways.js');
 var request = require('request');
