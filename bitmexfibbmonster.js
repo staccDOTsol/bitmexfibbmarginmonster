@@ -568,7 +568,7 @@ MongoClient.connect(process.env.mongodb || mongodb, function(err, db) {
 }, 100);
  
 function buy(k, rate, rate2){ //rate2 for buy is higher
-	console.log(k + ' ' + rate + ' ' + rate2);
+	console.log('buy buy ! ' + k + ' ' + rate + ' ' + rate2);
 	
 setTimeout(function(){
 var verb = 'POST',
@@ -619,7 +619,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = ((parseFloat(mBal) / 200000))
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -629,7 +629,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -654,7 +654,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = parseFloat(rate)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -664,7 +664,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -724,7 +724,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = -1*((parseFloat(mBal) / 200000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -734,7 +734,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -761,7 +761,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var offset = (parseFloat(rate) * .01)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	offset = offset * Math.pow(10, length)
 	price = price * Math.pow(10, length)
 }else {
@@ -774,7 +774,7 @@ console.log(price);
 	offset = Math.round(offset);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 	offset = offset / Math.pow(10, length)
 }else {
@@ -839,7 +839,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = -1*((parseFloat(mBal) / 200000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -849,7 +849,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -875,7 +875,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = parseFloat(rate2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -885,7 +885,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -945,7 +945,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = (-1*((parseFloat(mBal) / 200000)/2))
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -955,7 +955,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -981,7 +981,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = (parseFloat(rate)*0.93)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -991,7 +991,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -1045,7 +1045,7 @@ godobuy = true;
 }, 2000);
 }
 function sell(k, rate, rate2){ //rate2 for sell is lower
-console.log(k + ' ' + rate + ' ' + rate2);
+console.log('sell sell ! ' + k + ' ' + rate + ' ' + rate2);
 var qty = (parseFloat(mBal) / 200000);
 setTimeout(function(){
 var verb = 'POST',
@@ -1097,7 +1097,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = (-1 * (parseFloat(mBal) / 200000))
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -1107,7 +1107,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -1132,7 +1132,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = parseFloat(rate)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -1142,7 +1142,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -1202,7 +1202,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = ((parseFloat(mBal) / 200000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -1212,7 +1212,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -1238,7 +1238,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var offset = (parseFloat(rate) * .01)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	offset = offset * Math.pow(10, length)
 	price = price * Math.pow(10, length)
 }else {
@@ -1251,7 +1251,7 @@ console.log(price);
 	offset = Math.round(offset);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 	offset = offset / Math.pow(10, length)
 }else {
@@ -1319,7 +1319,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = ((parseFloat(mBal) / 200000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -1329,7 +1329,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -1354,7 +1354,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = parseFloat(rate2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -1364,7 +1364,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -1426,7 +1426,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = ((parseFloat(mBal) / 200000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -1436,7 +1436,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
@@ -1460,7 +1460,7 @@ var lengthabove = stringValue.split('.')[0].length
 	var price = parseFloat(rate)*0.93
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
-if (length > lengthabove){
+if (length >= lengthabove){
 	price = price * Math.pow(10, length)
 }else {
 		price = price / Math.pow(10, lengthabove)
@@ -1470,7 +1470,7 @@ console.log(price);
 	price = Math.round(price);
 console.log(price);
 	
-	if (length > lengthabove){
+	if (length >= lengthabove){
 	price = price / Math.pow(10, length)
 }else {
 		price = price * Math.pow(10, lengthabove)
