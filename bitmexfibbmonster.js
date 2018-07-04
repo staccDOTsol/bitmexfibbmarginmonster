@@ -621,7 +621,7 @@ var stringValue = math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}
 
 console.log(math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}));
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = ((parseFloat(mBal) / 25000))
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -652,7 +652,7 @@ var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}
 	console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
 
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = parseFloat(rate)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -718,7 +718,7 @@ if (math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}).toString().
 var stringValue = math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}).toString();
 console.log(math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}));
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = -1*((parseFloat(mBal) / 100000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -749,7 +749,7 @@ if (lot == 0){
 	var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}).toString();
 	console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = parseFloat(rate2)
 	var offset = (parseFloat(rate) * .01)
 	console.log('length: ' + length);
@@ -830,7 +830,7 @@ var stringValue = math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}
 
 console.log(math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}));
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = -1*((parseFloat(mBal) / 100000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -861,7 +861,7 @@ var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}
 	console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
 
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = parseFloat(rate2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -933,7 +933,7 @@ var stringValue = math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}
 
 console.log(math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}));
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = (-1*((parseFloat(mBal) / 100000)/2))
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -965,7 +965,7 @@ if (lot == 0){
 		console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
 
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = (parseFloat(rate)*0.93)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -1080,7 +1080,7 @@ var stringValue = math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}
 
 console.log(math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}));
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = (-1 * (parseFloat(mBal) / 25000))
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -1111,7 +1111,7 @@ var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}
 	console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
 
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = parseFloat(rate)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -1183,7 +1183,7 @@ var stringValue = math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}
 
 console.log(math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}));
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = ((parseFloat(mBal) / 25000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -1214,7 +1214,7 @@ if (lot == 0){
 		console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
 
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = parseFloat(rate2)
 	var offset = (parseFloat(rate) * .01)
 	console.log('length: ' + length);
@@ -1292,7 +1292,7 @@ var stringValue = math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}
 
 console.log(math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}));
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = ((parseFloat(mBal) / 25000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -1323,7 +1323,7 @@ var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}
 
 
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = parseFloat(rate2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -1396,7 +1396,7 @@ var stringValue = math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}
 
 console.log(math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}));
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = ((parseFloat(mBal) / 25000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
@@ -1426,7 +1426,7 @@ if (lot == 0){
 var stringValue = math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}).toString();	console.log(math.format(tickSizes[k],{exponential:{lower:0,upper:Infinity}}))
 
 var length = stringValue.split('.')[1].length
-var lengthabove = stringValue.split('.')[0].length + 1
+var lengthabove = stringValue.split('.')[0].length -1
 	var price = parseFloat(rate)*0.93
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
