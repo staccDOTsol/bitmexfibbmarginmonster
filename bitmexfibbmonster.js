@@ -1381,7 +1381,7 @@ app.get('/', function (req, res){
 	var msg = '<head><link rel="icon" href="https://polofibbmonster.herokuapp.com/favicon.ico?v=2" /><meta http-equiv="refresh" content="120"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script></head><h1>Don\'t Panic! If the data seems off, wait a minute or so.</h1>'
 	msg+="Total margin (sats): " + tBal
 	msg+="<br>Current excess margin (sats): " + mBal
-	var percent = -1*(100*(1- (tBal / startBtc)))
+	var percent = (100 * (-1 * (1 - (tBal / startBtc)))).toFixed(4)
 	msg+="<h1>Percent: " + percent.toFixed(2) + '%</h1>'
 	var diff2 = Math.abs(new Date() - startDate);
 	var minutes = Math.floor((diff2/1000)/60);
