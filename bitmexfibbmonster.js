@@ -359,10 +359,10 @@ var verb = 'GET',
 								console.log(result.result);
 							});
 						} if (enablemaybe[doc3[d].trades.k] == true && (doc3[d].trades.sold1 == true && doc3[d].trades.sold2 == true)){
-							console.log(doc3[d]);
+							//console.log(doc3[d]);
 							doc3[d].trades.sold1 = false;
 							doc3[d].trades.sold2 = false;
-							console.log(doc3[d]);
+							//console.log(doc3[d]);
 							console.log('set solds true');
 						collection.update({
 							},{
@@ -403,7 +403,7 @@ var verb = 'GET',
 							}							
 							 }
 							if (go == true){
-							console.log(d3d)	
+							//console.log(d3d)	
 						if (d3d.trades.bought1 == false){
 							//console.log(bestAsk)
 							//console.log(d3d.trades.k);
@@ -460,10 +460,6 @@ godobuy = false;
                             }
 							}
                         }
-						console.log(d3d.trades.k);
-						console.log(d3d.trades.sold1);
-						console.log(parseFloat(bestBid[d3d.trades.k]))
-						console.log(d3d.trades.sell1);
 						if (d3d.trades.sold1 == false){
                         if (parseFloat(bestBid[d3d.trades.k]) >= d3d.trades.sell1 && parseFloat(bestAsk[d3d.trades.k]) > 0.00000200) {
                             //////////console.log(d3d.trades.last);
