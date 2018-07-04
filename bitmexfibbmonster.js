@@ -151,7 +151,7 @@ var callback = function(error, data, response) {
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://bitmex.com'+path,
+		  url:'https://www.bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
@@ -293,7 +293,7 @@ var verb = 'GET',
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://bitmex.com'+path,
+		  url:'https://www.bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
@@ -392,16 +392,18 @@ var verb = 'GET',
                 }).toArray(function(err, doc3) {
 
                     for (var d in doc3) {
+							console.log(tickSizes	);
 						if (doc3[d].trades){
 							 var d3d = doc3[d];
 							 var go = false;
 							 for (var d in tickSizes){
+								console.log(d);
 							if (d == d3d.trades.k){
 							go = true;
 							}							
 							 }
 							if (go == true){
-							// console.log(d3d)	
+							console.log(d3d)	
 						if (d3d.trades.bought1 == false){
 							//console.log(bestAsk)
 							//console.log(d3d.trades.k);
@@ -532,7 +534,7 @@ godosell = false;
 				
  setTimeout(function(){
 MongoClient.connect(process.env.mongodb || mongodb, function(err, db) {
-	
+	console.log(err);
 	//insert(
    dbo = db.db(process.env.thedatabase)
 	var count = 0;
@@ -593,7 +595,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://bitmex.com'+path,
+  url:'https://www.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -700,7 +702,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://bitmex.com'+path,
+  url:'https://www.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -813,7 +815,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://bitmex.com'+path,
+  url:'https://www.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -921,7 +923,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://bitmex.com'+path,
+  url:'https://www.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1028,7 +1030,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://bitmex.com'+path,
+  url:'https://www.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1073,7 +1075,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://bitmex.com'+path,
+  url:'https://www.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1181,7 +1183,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://bitmex.com'+path,
+  url:'https://www.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1296,7 +1298,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://bitmex.com'+path,
+  url:'https://www.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1406,7 +1408,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://bitmex.com'+path,
+  url:'https://www.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1509,7 +1511,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://bitmex.com'+path,
+  url:'https://www.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1588,7 +1590,7 @@ app.get('/', function (req, res){
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://bitmex.com'+path,
+		  url:'https://www.bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
@@ -1629,7 +1631,7 @@ var verb = 'GET',
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://bitmex.com'+path,
+		  url:'https://www.bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
