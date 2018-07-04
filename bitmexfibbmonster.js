@@ -616,7 +616,7 @@ if (stringValue.split('.')[1] != undefined){
 console.log(math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}));
 var length = stringValue.split('.')[1].length
 var lengthabove = stringValue.split('.')[0].length 
-	var price = ((parseFloat(mBal) / 85000))
+	var price = ((parseFloat(mBal) / 850000))
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
 if (length >= lengthabove){
@@ -636,7 +636,7 @@ console.log(price);
 
 }
 }else {
-		var price = Math.floor(((parseFloat(mBal) / 85000)))
+		var price = Math.floor(((parseFloat(mBal) / 850000)))
 
 }
 console.log(price);
@@ -721,7 +721,7 @@ if (stringValue.split('.')[1] != undefined){
 
 var length = stringValue.split('.')[1].length
 var lengthabove = stringValue.split('.')[0].length 
-	var price = -1*((parseFloat(mBal) / 85000)/2)
+	var price = -1*((parseFloat(mBal) / 850000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
 if (length >= lengthabove){
@@ -741,7 +741,7 @@ console.log(price);
 
 }
 } else {
-		var price = Math.floor(-1*((parseFloat(mBal) / 85000)/2))
+		var price = Math.floor(-1*((parseFloat(mBal) / 850000)/2))
 
 }
 console.log(price);
@@ -836,7 +836,7 @@ if (stringValue.split('.')[1] != undefined){
 
 var length = stringValue.split('.')[1].length
 var lengthabove = stringValue.split('.')[0].length 
-	var price = -1*((parseFloat(mBal) / 85000)/2)
+	var price = -1*((parseFloat(mBal) / 850000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
 if (length >= lengthabove){
@@ -856,7 +856,7 @@ console.log(price);
 
 }
 } else {
-		var price = Math.floor(-1*((parseFloat(mBal) / 85000)/2))
+		var price = Math.floor(-1*((parseFloat(mBal) / 850000)/2))
 
 }
 console.log(price);
@@ -942,7 +942,7 @@ if (stringValue.split('.')[1] != undefined){
 
 var length = stringValue.split('.')[1].length
 var lengthabove = stringValue.split('.')[0].length 
-	var price = (-1*((parseFloat(mBal) / 85000)/2))
+	var price = (-1*((parseFloat(mBal) / 850000)/2))
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
 if (length >= lengthabove){
@@ -961,7 +961,7 @@ console.log(price);
 		price = price * Math.pow(10, lengthabove)
 }
 } else {
-		var price = Math.floor((-1*((parseFloat(mBal) / 85000)/2)))
+		var price = Math.floor((-1*((parseFloat(mBal) / 850000)/2)))
 
 }
 console.log(price);
@@ -1048,7 +1048,7 @@ godobuy = true;
 }
 function sell(k, rate, rate2){ //rate2 for sell is lower
 console.log('sell sell ! ' + k + ' ' + rate + ' ' + rate2);
-var qty = (parseFloat(mBal) / 85000);
+var qty = (parseFloat(mBal) / 850000);
 setTimeout(function(){
 var verb = 'POST',
   path = '/api/v1/position/leverage',
@@ -1096,7 +1096,7 @@ if (stringValue.split('.')[1] != undefined){
 
 var length = stringValue.split('.')[1].length
 var lengthabove = stringValue.split('.')[0].length 
-	var price = (-1 * (parseFloat(mBal) / 85000))
+	var price = (-1 * (parseFloat(mBal) / 850000))
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
 if (length >= lengthabove){
@@ -1116,7 +1116,7 @@ console.log(price);
 
 }
 } else {
-		var price = Math.floor((-1 * (parseFloat(mBal) / 85000)))
+		var price = Math.floor((-1 * (parseFloat(mBal) / 850000)))
 
 }
 console.log(price);
@@ -1201,7 +1201,7 @@ if (stringValue.split('.')[1] != undefined){
 
 var length = stringValue.split('.')[1].length
 var lengthabove = stringValue.split('.')[0].length 
-	var price = ((parseFloat(mBal) / 85000)/2)
+	var price = ((parseFloat(mBal) / 850000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
 if (length >= lengthabove){
@@ -1221,7 +1221,7 @@ console.log(price);
 
 }
 } else {
-		var price = Math.floor(((parseFloat(mBal) / 85000)/2))
+		var price = Math.floor(((parseFloat(mBal) / 850000)/2))
 
 }
 console.log(price);
@@ -1318,7 +1318,7 @@ if (stringValue.split('.')[1] != undefined){
 
 var length = stringValue.split('.')[1].length
 var lengthabove = stringValue.split('.')[0].length 
-	var price = ((parseFloat(mBal) / 85000)/2)
+	var price = ((parseFloat(mBal) / 850000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
 if (length >= lengthabove){
@@ -1338,7 +1338,7 @@ console.log(price);
 
 }
 }else {
-		var price = Math.floor(((parseFloat(mBal) / 85000)/2))
+		var price = Math.floor(((parseFloat(mBal) / 850000)/2))
 
 }
 console.log(price);
@@ -1425,7 +1425,7 @@ console.log(math.format(lotSizes[k],{exponential:{lower:0,upper:Infinity}}));
 if (stringValue.split('.')[1] != undefined){
 var length = stringValue.split('.')[1].length
 var lengthabove = stringValue.split('.')[0].length 
-	var price = ((parseFloat(mBal) / 85000)/2)
+	var price = ((parseFloat(mBal) / 850000)/2)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
 if (length >= lengthabove){
@@ -1445,7 +1445,7 @@ console.log(price);
 
 }
 } else {
-		var price = Math.floor(((parseFloat(mBal) / 85000)/2))
+		var price = Math.floor(((parseFloat(mBal) / 850000)/2))
 
 }
 console.log(price);
