@@ -1382,7 +1382,7 @@ app.get('/', function (req, res){
 	msg+="Total margin (sats): " + tBal
 	msg+="<br>Current excess margin (sats): " + mBal
 	var percent = (100 * (-1 * (1 - (tBal / startBtc)))).toFixed(4)
-	msg+="<h1>Percent: " + percent.toFixed(2) + '%</h1>'
+	msg+="<h1>Percent: " + percent + '%</h1>'
 	var diff2 = Math.abs(new Date() - startDate);
 	var minutes = Math.floor((diff2/1000)/60);
 	var hours = ((diff2/1000)/60 / 60).toFixed(8);
