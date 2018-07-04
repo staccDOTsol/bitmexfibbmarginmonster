@@ -1,0 +1,43 @@
+{
+  "author": {
+    "name": "Jarett Dunn",
+    "email": "jarettrsdunn@gmail.com"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "bitfinex-api-node": "^2.0.0-beta.1",
+    "body-parser": "^1.18.3",
+    "ccxt": "^1.14.301",
+    "co": "4.6.0",
+    "dotenv": "*",
+    "express": "^4.16.3",
+    "hitbtc-api": "^3.0.2",
+    "hitbtc-node-js": "0.0.1",
+    "mongodb": "*",
+    "node-binance-api": "^0.8.0",
+    "path": "*",
+    "poloniex-api-node": "^1.9.0",
+    "request": "^2.87.0",
+    "sendgrid": "^5.2.3",
+    "serve-favicon": "*",
+    "trendyways": "^0.4.2",
+	"bitmex-realtime-api": "*",
+	"bit_mex_api": "*"
+  },
+  "scripts": {
+    "start": "node bitmexfibbmonster.js"
+  },
+  "deprecated": false,
+  "description": "Engine for Polo automation",
+  "engines": {
+    "node": ">=0.6"
+  },
+  "name": "polofibbmonster",
+  "version": "1.0.4",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1"
+  }
+}
