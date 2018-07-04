@@ -162,8 +162,8 @@ var callback = function(error, data, response) {
 			  if (symbol ==(JSON.parse(body)[d].symbol)){
 				  lotSizes[symbol] = JSON.parse(body)[d].lotSize
 				  tickSizes[symbol] = JSON.parse(body)[d].tickSize
-				  console.log(JSON.parse(body)[d].tickSize);
-				  console.log(tickSizes);
+				  //console.log(JSON.parse(body)[d].tickSize);
+				  //console.log(tickSizes);
 			  }
 		  }
 		});}
@@ -1391,7 +1391,7 @@ app.get('/', function (req, res){
 	var percentHr = ((percent) / hours).toFixed(4);
 	msg+="minutes: " + minutes + ', '
 	msg+="hours: " + hours
-	msg+="<h1>Percent/hr: " + percentHr + "</h1>"
+	msg+="<h1>Percent/hr: " + percentHr + "%</h1>"
 	dbo.listCollections().toArray(function(err, collInfos) {
         // collInfos is an array of collection info objects that look like:
         // { name: 'test', options: {} }
