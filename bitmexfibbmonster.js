@@ -15,7 +15,7 @@ var crypto = require('crypto');
 var apiKey = process.env.apikey;
 var apiSecret = process.env.apisecret;
 const client = new BitMEXClient({
-  testnet: true, // set `true` to connect to the testnet site (testnet.bitmex.com)
+  testnet: false, // set `true` to connect to the testnet site (bitmex.com)
   // Set API Key ID and Secret to subscribe to private streams.
   // See `Available Private Streams` below.
   apiKeyID: process.env.apikey,
@@ -151,7 +151,7 @@ var callback = function(error, data, response) {
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://testnet.bitmex.com'+path,
+		  url:'https://bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
@@ -293,7 +293,7 @@ var verb = 'GET',
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://testnet.bitmex.com'+path,
+		  url:'https://bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
@@ -595,7 +595,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://testnet.bitmex.com'+path,
+  url:'https://bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -702,7 +702,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://testnet.bitmex.com'+path,
+  url:'https://bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -815,7 +815,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://testnet.bitmex.com'+path,
+  url:'https://bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -923,7 +923,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://testnet.bitmex.com'+path,
+  url:'https://bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1030,7 +1030,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://testnet.bitmex.com'+path,
+  url:'https://bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1075,7 +1075,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://testnet.bitmex.com'+path,
+  url:'https://bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1183,7 +1183,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://testnet.bitmex.com'+path,
+  url:'https://bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1298,7 +1298,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://testnet.bitmex.com'+path,
+  url:'https://bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1408,7 +1408,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://testnet.bitmex.com'+path,
+  url:'https://bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1511,7 +1511,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://testnet.bitmex.com'+path,
+  url:'https://bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1590,7 +1590,7 @@ app.get('/', function (req, res){
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://testnet.bitmex.com'+path,
+		  url:'https://bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
@@ -1631,7 +1631,7 @@ var verb = 'GET',
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://testnet.bitmex.com'+path,
+		  url:'https://bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
