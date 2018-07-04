@@ -30,6 +30,7 @@ var apiInstance = new BitMexApi.InstrumentApi();
 var bestAsk=[]
 var bestBid=[]
 var tickSizes = []
+var initMargins = []
 var winners=[]
 var callback = function(error, data, response) {
   if (error) {
@@ -162,7 +163,8 @@ var callback = function(error, data, response) {
 			  if (symbol ==(JSON.parse(body)[d].symbol)){
 				  lotSizes[symbol] = JSON.parse(body)[d].lotSize
 				  tickSizes[symbol] = JSON.parse(body)[d].tickSize
-				  //console.log(JSON.parse(body)[d].tickSize);
+				  initMargins[symbol] = JSON.parse(body)[d].initMargin
+				  //console.log(JSON.parse(body)[d]);
 				  //console.log(tickSizes);
 			  }
 		  }
@@ -334,7 +336,7 @@ var verb = 'GET',
 							}
 						}for (var o in orders){
 							if (orders[o].symbol == doc3[d].trades.k){
-									console.log(orders[o].ordStatus);
+									//console.log(orders[o].ordStatus);
 								if (orders[o].ordStatus == "New"){
 									enablemaybe[doc3[d].trades.k] = false;
 								}
@@ -572,7 +574,7 @@ setTimeout(function(){
 var verb = 'POST',
   path = '/api/v1/position/leverage',
   expires = new Date().getTime() + (60 * 1000), // 1 min in the future
-  data = {symbol:k,leverage:20};
+  data = {symbol:k,leverage:1/initMargins[k]};
 
 // Pre-compute the postBody so we can be sure that we're using *exactly* the same body in the request
 // and in the signature. If you don't do this, you might get differently-sorted keys and blow the signature.
@@ -1028,7 +1030,7 @@ setTimeout(function(){
 var verb = 'POST',
   path = '/api/v1/position/leverage',
   expires = new Date().getTime() + (60 * 1000), // 1 min in the future
-  data = {symbol:k,leverage:20};
+  data = {symbol:k,leverage:1/initMargins[k]};
 
 // Pre-compute the postBody so we can be sure that we're using *exactly* the same body in the request
 // and in the signature. If you don't do this, you might get differently-sorted keys and blow the signature.
