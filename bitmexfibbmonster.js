@@ -559,10 +559,10 @@ MongoClient.connect(process.env.mongodb || mongodb, function(err, db) {
                 }, 25500);
 				
 					apiInstance.instrumentGetActive(callback);
-					//setInterval(function(){
+					setInterval(function(){
 					//	
-					//apiInstance.instrumentGetActive(callback);
-					//}, 180000);
+					apiInstance.instrumentGetActive(callback);
+					}, 180000);
     });
 });
 }, 100);
