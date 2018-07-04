@@ -711,7 +711,8 @@ var gonext = true;
 request(requestOptions, function(error, response, body) {
   if (error) {gonext = false; if (error.toString().indexOf('Executing at order price ')!= -1){gonext = false;}console.log(error); }
   if (body.toString().indexOf('Executing at order price ')!= -1){gonext = false;}
-
+if (body.toString().indexOf('insufficient') != -1){gonext = false;}
+if (body.toString().indexOf('error') != -1){gonext = false;}
 if (gonext == true){
 setTimeout(function(){
 	
@@ -1191,6 +1192,8 @@ var gonext = true;
 request(requestOptions, function(error, response, body) {
    if (error) { console.log('err err err');if (error.toString().indexOf('Executing at order price ')!= -1){gonext = false;}console.log(error); }
   if (body.toString().indexOf('Executing at order price ')!= -1){gonext = false;}
+  if (body.toString().indexOf('insufficient') != -1){gonext = false;}
+if (body.toString().indexOf('error') != -1){gonext = false;}
 if (gonext == true){
 
 setTimeout(function(){
