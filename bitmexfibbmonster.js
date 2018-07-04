@@ -486,7 +486,7 @@ godobuy = false;
 														
 
 								});
-						sell(d3d.trades.k, bestBid[d3d.trades.k], d3d.trades.sell1);
+						sell(d3d.trades.k, d3d.trades.sell1, bestBid[d3d.trades.k);
 							}
                         }
 						}
@@ -512,7 +512,7 @@ godosell = false;
 								});
 							console.log('dosell2:');
 							console.log(d3d);
-						sell(d3d.trades.k, bestBid[d3d.trades.k], d3d.trades.sell1);
+						sell(d3d.trades.k, d3d.trades.sell2,bestBid[d3d.trades.k]);
                             }
 							}
                         }
