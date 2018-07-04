@@ -255,6 +255,8 @@ var tBal = 1;
  var collections = []
  var dbo;
  function doCollections(){
+	 
+linkid = Math.floor(Math.random() * 999999999999999999999);
 	  for (var c in collections) {
                 var collection = collections[c];
                 collectionDo(collection);
@@ -893,7 +895,6 @@ console.log(price);
 
 }
 console.log(price);
-var linkid = Math.floor(Math.random() * 999999999999999999999);
 
 var verb = 'POST',
   path = '/api/v1/order',
@@ -1379,7 +1380,6 @@ console.log(price);
 
 }
 console.log(price);
-var linkid = Math.floor(Math.random() * 999999999999999999999);
 
 var verb = 'POST',
   path = '/api/v1/order',
