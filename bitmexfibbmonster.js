@@ -1387,7 +1387,7 @@ app.get('/', function (req, res){
 	var minutes = Math.floor((diff2/1000)/60);
 	var hours = ((diff2/1000)/60 / 60).toFixed(8);
 	var percentHr = ((percent) / hours).toFixed(4);
-	msg+="minutes: " + minutes
+	msg+="minutes: " + minutes + ', '
 	msg+="hours: " + hours
 	msg+="<h1>Percent/hr: " + percentHr + "</h1>"
 	dbo.listCollections().toArray(function(err, collInfos) {
