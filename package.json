@@ -23,7 +23,8 @@
     "serve-favicon": "*",
     "trendyways": "^0.4.2",
 	"bitmex-realtime-api": "*",
-	"bit_mex_api": "*"
+	"bit_mex_api": "*",
+	"mathjs": "*"
   },
   "scripts": {
     "start": "node bitmexfibbmonster.js"
