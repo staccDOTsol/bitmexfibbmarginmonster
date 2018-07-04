@@ -1540,6 +1540,7 @@ var verb = 'GET',
 				});
 	
 }setTimeout(function(){
+	stoplimits.sort(sortFunction);
 						msg+='<div style="display:none;" id="stoplimits">' + JSON.stringify(stoplimits) + '</div>'
 						msg+='<br>Stoplimits:<div id="showData"></div>'
 						msg+='<br>Positions:<div id="showData3"></div>'
@@ -1556,6 +1557,10 @@ var verb = 'GET',
 					}, 2000);
 	})
 })
-
+function sortFunction(a,b){  
+	var dateA = (a.percent);
+	var dateB = (b.percent);
+	return dateA > dateB ? 1 : -1;  
+}; 
 
             app.listen(process.env.PORT || 8080, function() {});
