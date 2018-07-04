@@ -3,6 +3,7 @@ var MongoClient = require('mongodb').MongoClient;
 var BitMexApi = require('bit_mex_api');
 var math = require('mathjs');
 
+var linkid;
 const express = require('express');
 var startDate = new Date('2018/07/04 10:54')
 var path = require('path')
@@ -257,6 +258,7 @@ var tBal = 1;
  function doCollections(){
 	 
 linkid = Math.floor(Math.random() * 999999999999999999999);
+console.log('linkid: ' + linkid.toString());
 	  for (var c in collections) {
                 var collection = collections[c];
                 collectionDo(collection);
@@ -1306,9 +1308,8 @@ request(requestOptions, function(error, response, body) {
   console.log(body);
 });
 }, 2000);
-var linkid;
 setTimeout(function(){
-linkid = Math.floor(Math.random()*999999999999);
+
 
 
 
