@@ -261,6 +261,121 @@ var tBal = 1;
 
 							}
  }
+setInterval(function(){
+	doOrders()
+}, 60000);
+ function doOrders(){
+	 
+var verb = 'GET',
+		  path = '/api/v1/order',
+		  expires = new Date().getTime() + (60 * 1000), // 1 min in the future
+		  data = {};
+		//console.log(data);
+		// Pre-compute the postBody so we can be sure that we're using *exactly* the same body in the request
+		// and in the signature. If you don't do this, you might get differently-sorted keys and blow the signature.
+		var postBody = JSON.stringify(data);
+
+		var signature = crypto.createHmac('sha256', apiSecret).update(verb + path + expires + postBody).digest('hex');
+
+		var headers = {
+		  'content-type' : 'application/json',
+		  'Accept': 'application/json',
+		  'X-Requested-With': 'XMLHttpRequest',
+		  // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
+		  // https://www.bitmex.com/app/apiKeysUsage for more details.
+		  'api-expires': expires,
+		  'api-key': apiKey,
+		  'api-signature': signature
+		};
+
+		var requestOptions = {
+		  headers: headers,
+		  url:'https://testnet.bitmex.com'+path,
+		  method: verb,
+		  body: postBody
+		};
+
+		request(requestOptions, function(error, response, body) {
+		  if (error) { console.log(error); }
+		  
+		  //console.log((JSON.parse(body)));
+		  var json = JSON.parse(body);
+		  orders = []
+		  for (var o in json){
+			  if (json[o].orderQty >= 0.001){
+				  orders.push(json[o]);
+			  }
+		  }
+		
+		for (var c in collections){
+			var collection = collections[c];
+                doUpdate(collection, orders);
+				
+		}
+		});
+ }
+ function doUpdate(collection, orders){
+	 var enablemaybe = []
+	 collection.find({
+
+                }, {
+                    $exists: true
+                }).sort({
+                    _id: -1
+
+                }).toArray(async function(err, doc3) {
+					for (var d in doc3){
+						for (var o in orders){
+							if (orders[o].symbol == doc3[d].trades.k){
+									console.log(orders[o].ordStatus);
+								if (orders[o].ordStatus == "Canceled" || orders[o].ordStatus == "Rejected" || orders[o].ordStatus == "Filled"){
+									enablemaybe[doc3[d].trades.k] = true;
+								}
+							}
+						}for (var o in orders){
+							if (orders[o].symbol == doc3[d].trades.k){
+									console.log(orders[o].ordStatus);
+								if (orders[o].ordStatus == "New"){
+									enablemaybe[doc3[d].trades.k] = false;
+								}
+							}
+						}
+						if (enablemaybe[doc3[d].trades.k] == true && (doc3[d].trades.bought1 == true && doc3[d].trades.bought2 == true)){
+							doc3[d].trades.bought1 = false;
+							doc3[d].trades.bought2 = false;
+							console.log('set buys true');
+						collection.update({
+							},{
+													$set: {
+														'trades': doc3[d].trades
+													}
+												}, {
+								
+							},
+							function(err, result) {
+								console.log(result.result);
+							});
+						} if (enablemaybe[doc3[d].trades.k] == true && (doc3[d].trades.sold1 == true && doc3[d].trades.sold2 == true)){
+							console.log(doc3[d]);
+							doc3[d].trades.sold1 = false;
+							doc3[d].trades.sold2 = false;
+							console.log(doc3[d]);
+							console.log('set solds true');
+						collection.update({
+							},{
+													$set: {
+														'trades': doc3[d].trades
+													}
+												}, {
+								
+							},
+							function(err, result) {
+								console.log(result.result);
+							});
+						}
+					}
+				});
+ }
  function collectionDo(collection){
 	 
  var ds = []
@@ -288,7 +403,7 @@ var tBal = 1;
 							//console.log(bestAsk)
 							//console.log(d3d.trades.k);
 							//console.log(bestAsk[d3d.trades.k]);
-							//console.log(d3d.trades.buy1);
+							//console.log(d3d.trades.buy1);                                                                             
 				                        if (parseFloat(bestAsk[d3d.trades.k]) <= d3d.trades.buy1 && parseFloat(bestAsk[d3d.trades.k]) > 0.00000200)	 {
                             //////////console.log(d3d.trades.last);
 							//////////console.log(d3d.trades);
@@ -427,7 +542,9 @@ MongoClient.connect(process.env.mongodb || mongodb, function(err, db) {
 
             dbs.push(collInfos[col].name);
             collections.push(dbo.collection(collInfos[col].name));
+			console.log(dbs);
         }
+			doOrders();
         //////////console.log(dbs);
 						////////////console.log('settimeout');
 						setTimeout(function(){
