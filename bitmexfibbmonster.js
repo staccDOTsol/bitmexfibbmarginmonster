@@ -5,9 +5,9 @@ var math = require('mathjs');
 
 var linkid;
 const express = require('express');
-var startDate = new Date('2018/07/04 10:54')
+var startDate = new Date('2018/07/04 19:54')
 var path = require('path')
- var startBtc =  1768897
+ var startBtc =  1743281
 var app = express()
 const tw = require('./trendyways.js');
 var request = require('request');
