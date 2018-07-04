@@ -263,9 +263,10 @@ var tBal = 1;
 
 							}
  }
+ /*
 setInterval(function(){
 	doOrders()
-}, 60000);
+}, 60000); */
  function doOrders(){
 	 
 var verb = 'GET',
