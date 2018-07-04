@@ -486,7 +486,7 @@ godobuy = false;
 														
 
 								});
-						sell(d3d.trades.k, d3d.trades.buy1, d3d.trades.sell1);
+						sell(d3d.trades.k, d3d.trades.sell1, d3d.trades.buy1);
 							}
                         }
 						}
