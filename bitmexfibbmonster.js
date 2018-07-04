@@ -1503,7 +1503,7 @@ var verb = 'GET',
 						//////////console.log(doc3[d].trades);
 						if (doc3[d].trades){
 							
-						if (doc3[d].trades.bought1 == false && parseFloat(bestAsk[d3d.trades.k]) > 0.00000200){
+						if (doc3[d].trades.bought1 == false){
 							var sl = {'direction': 'buy1', 'pair' : doc3[d].trades.k, 'stoplimit': doc3[d].trades.buy1, 'currentAsk': bestAsk[doc3[d].trades.k], 'percent': (parseFloat(bestAsk[doc3[d].trades.k]) / parseFloat(doc3[d].trades.buy1))}
 						stoplimits.push(sl);
 							
