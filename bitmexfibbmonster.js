@@ -5,7 +5,7 @@ var math = require('mathjs');
 
 var linkid;
 const express = require('express');
-var startDate = new Date('2018/07/04 19:54')
+var startDate = new Date()
 var path = require('path')
  var startBtc =  parseFloat(process.env.startBtc);
 var app = express()
@@ -16,7 +16,7 @@ var crypto = require('crypto');
 var apiKey = process.env.apikey;
 var apiSecret = process.env.apisecret;
 const client = new BitMEXClient({
-  testnet: false, // set `true` to connect to the testnet site (bitmex.com)
+  testnet: true, // set `true` to connect to the testnet site (bitmex.com)
   // Set API Key ID and Secret to subscribe to private streams.
   // See `Available Private Streams` below.
   apiKeyID: process.env.apikey,
@@ -144,7 +144,7 @@ var callback = function(error, data, response) {
 		  'Accept': 'application/json',
 		  'X-Requested-With': 'XMLHttpRequest',
 		  // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-		  // https://www.bitmex.com/app/apiKeysUsage for more details.
+		  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
 		  'api-expires': expires,
 		  'api-key': apiKey,
 		  'api-signature': signature
@@ -152,7 +152,7 @@ var callback = function(error, data, response) {
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://www.bitmex.com'+path,
+		  url:'https://testnet.bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
@@ -289,7 +289,7 @@ var verb = 'GET',
 		  'Accept': 'application/json',
 		  'X-Requested-With': 'XMLHttpRequest',
 		  // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-		  // https://www.bitmex.com/app/apiKeysUsage for more details.
+		  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
 		  'api-expires': expires,
 		  'api-key': apiKey,
 		  'api-signature': signature
@@ -297,7 +297,7 @@ var verb = 'GET',
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://www.bitmex.com'+path,
+		  url:'https://testnet.bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
@@ -360,7 +360,7 @@ var verb = 'GET',
 								
 							},
 							function(err, result) {
-								console.log(result.result);
+								if (!err) console.log(result.result);
 							});
 						} if (enablemaybe[doc3[d].trades.k] == true && (doc3[d].trades.sold1 == true && doc3[d].trades.sold2 == true)){
 							//console.log(doc3[d]);
@@ -369,6 +369,7 @@ var verb = 'GET',
 							//console.log(doc3[d]);
 							console.log('set solds true');
 						collection.update({
+							'trades.k': doc3[d].trades.k
 							},{
 													$set: {
 														'trades': doc3[d].trades
@@ -377,7 +378,8 @@ var verb = 'GET',
 								
 							},
 							function(err, result) {
-								console.log(result.result);
+								console.log(err)
+								if (!err) console.log(result.result);
 							});
 						}
 					}
@@ -430,7 +432,7 @@ var verb = 'GET',
 								},
 								function(err, result) {
 								   
-									console.log(result.result);
+								if (!err) 	console.log(result.result);
 														
 
 								});
@@ -454,7 +456,7 @@ godobuy = false;
 								function(err, result) {
 								   
 								   console.log(err);
-									console.log(result.result);
+									if (!err) console.log(result.result);
 														
 
 								});
@@ -482,7 +484,7 @@ godobuy = false;
 								},
 								function(err, result) {
 								   console.log(err);
-									console.log(result.result);
+								if (!err) 	console.log(result.result);
 														
 
 								});
@@ -506,7 +508,7 @@ godosell = false;
 								function(err, result) {
 								   
 								   console.log(err);
-									console.log(result.result);
+									if (!err) console.log(result.result);
 														
 
 								});
@@ -574,7 +576,7 @@ setTimeout(function(){
 var verb = 'POST',
   path = '/api/v1/position/leverage',
   expires = new Date().getTime() + (60 * 1000), // 1 min in the future
-  data = {symbol:k,leverage:1/(initMargins[k])};
+  data = {symbol:k,leverage:1/(initMargins[k] * 10)};
 
 // Pre-compute the postBody so we can be sure that we're using *exactly* the same body in the request
 // and in the signature. If you don't do this, you might get differently-sorted keys and blow the signature.
@@ -587,7 +589,7 @@ var headers = {
   'Accept': 'application/json',
   'X-Requested-With': 'XMLHttpRequest',
   // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-  // https://www.bitmex.com/app/apiKeysUsage for more details.
+  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
   'api-expires': expires,
   'api-key': apiKey,
   'api-signature': signature
@@ -595,7 +597,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://www.bitmex.com'+path,
+  url:'https://testnet.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -694,7 +696,7 @@ var headers = {
   'Accept': 'application/json',
   'X-Requested-With': 'XMLHttpRequest',
   // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-  // https://www.bitmex.com/app/apiKeysUsage for more details.
+  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
   'api-expires': expires,
   'api-key': apiKey,
   'api-signature': signature
@@ -702,7 +704,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://www.bitmex.com'+path,
+  url:'https://testnet.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -807,7 +809,7 @@ var headers = {
   'Accept': 'application/json',
   'X-Requested-With': 'XMLHttpRequest',
   // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-  // https://www.bitmex.com/app/apiKeysUsage for more details.
+  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
   'api-expires': expires,
   'api-key': apiKey,
   'api-signature': signature
@@ -815,7 +817,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://www.bitmex.com'+path,
+  url:'https://testnet.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -914,7 +916,7 @@ var headers = {
   'Accept': 'application/json',
   'X-Requested-With': 'XMLHttpRequest',
   // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-  // https://www.bitmex.com/app/apiKeysUsage for more details.
+  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
   'api-expires': expires,
   'api-key': apiKey,
   'api-signature': signature
@@ -922,7 +924,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://www.bitmex.com'+path,
+  url:'https://testnet.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -978,7 +980,7 @@ if (stringValue.split('.')[1] != undefined){
 
 var length = stringValue.split('.')[1].length
 var lengthabove = stringValue.split('.')[0].length 
-	var price = (parseFloat(rate)*0.93)
+	var price = (parseFloat(rate)*0.88)
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
 if (length >= lengthabove){
@@ -1021,7 +1023,7 @@ var headers = {
   'Accept': 'application/json',
   'X-Requested-With': 'XMLHttpRequest',
   // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-  // https://www.bitmex.com/app/apiKeysUsage for more details.
+  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
   'api-expires': expires,
   'api-key': apiKey,
   'api-signature': signature
@@ -1029,7 +1031,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://www.bitmex.com'+path,
+  url:'https://testnet.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1053,7 +1055,7 @@ setTimeout(function(){
 var verb = 'POST',
   path = '/api/v1/position/leverage',
   expires = new Date().getTime() + (60 * 1000), // 1 min in the future
-  data = {symbol:k,leverage:1/(initMargins[k])};
+  data = {symbol:k,leverage:1/(initMargins[k] * 10)};
 
 // Pre-compute the postBody so we can be sure that we're using *exactly* the same body in the request
 // and in the signature. If you don't do this, you might get differently-sorted keys and blow the signature.
@@ -1066,7 +1068,7 @@ var headers = {
   'Accept': 'application/json',
   'X-Requested-With': 'XMLHttpRequest',
   // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-  // https://www.bitmex.com/app/apiKeysUsage for more details.
+  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
   'api-expires': expires,
   'api-key': apiKey,
   'api-signature': signature
@@ -1074,7 +1076,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://www.bitmex.com'+path,
+  url:'https://testnet.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1174,7 +1176,7 @@ var headers = {
   'Accept': 'application/json',
   'X-Requested-With': 'XMLHttpRequest',
   // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-  // https://www.bitmex.com/app/apiKeysUsage for more details.
+  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
   'api-expires': expires,
   'api-key': apiKey,
   'api-signature': signature
@@ -1182,7 +1184,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://www.bitmex.com'+path,
+  url:'https://testnet.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1290,7 +1292,7 @@ var headers = {
   'Accept': 'application/json',
   'X-Requested-With': 'XMLHttpRequest',
   // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-  // https://www.bitmex.com/app/apiKeysUsage for more details.
+  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
   'api-expires': expires,
   'api-key': apiKey,
   'api-signature': signature
@@ -1298,7 +1300,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://www.bitmex.com'+path,
+  url:'https://testnet.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1398,7 +1400,7 @@ var headers = {
   'Accept': 'application/json',
   'X-Requested-With': 'XMLHttpRequest',
   // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-  // https://www.bitmex.com/app/apiKeysUsage for more details.
+  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
   'api-expires': expires,
   'api-key': apiKey,
   'api-signature': signature
@@ -1406,7 +1408,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://www.bitmex.com'+path,
+  url:'https://testnet.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1460,7 +1462,7 @@ if (stringValue.split('.')[1] != undefined){
 
 var length = stringValue.split('.')[1].length
 var lengthabove = stringValue.split('.')[0].length 
-	var price = parseFloat(rate)*0.93
+	var price = parseFloat(rate)*1.12
 	console.log('length: ' + length);
 	console.log('lengthabove: ' + lengthabove);
 if (length >= lengthabove){
@@ -1501,7 +1503,7 @@ var headers = {
   'Accept': 'application/json',
   'X-Requested-With': 'XMLHttpRequest',
   // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-  // https://www.bitmex.com/app/apiKeysUsage for more details.
+  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
   'api-expires': expires,
   'api-key': apiKey,
   'api-signature': signature
@@ -1509,7 +1511,7 @@ var headers = {
 
 var requestOptions = {
   headers: headers,
-  url:'https://www.bitmex.com'+path,
+  url:'https://testnet.bitmex.com'+path,
   method: verb,
   body: postBody
 };
@@ -1580,7 +1582,7 @@ app.get('/', function (req, res){
 		  'Accept': 'application/json',
 		  'X-Requested-With': 'XMLHttpRequest',
 		  // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-		  // https://www.bitmex.com/app/apiKeysUsage for more details.
+		  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
 		  'api-expires': expires,
 		  'api-key': apiKey,
 		  'api-signature': signature
@@ -1588,7 +1590,7 @@ app.get('/', function (req, res){
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://www.bitmex.com'+path,
+		  url:'https://testnet.bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
@@ -1621,7 +1623,7 @@ var verb = 'GET',
 		  'Accept': 'application/json',
 		  'X-Requested-With': 'XMLHttpRequest',
 		  // This example uses the 'expires' scheme. You can also use the 'nonce' scheme. See
-		  // https://www.bitmex.com/app/apiKeysUsage for more details.
+		  // https://testnet.bitmex.com/app/apiKeysUsage for more details.
 		  'api-expires': expires,
 		  'api-key': apiKey,
 		  'api-signature': signature
@@ -1629,7 +1631,7 @@ var verb = 'GET',
 
 		var requestOptions = {
 		  headers: headers,
-		  url:'https://www.bitmex.com'+path,
+		  url:'https://testnet.bitmex.com'+path,
 		  method: verb,
 		  body: postBody
 		};
