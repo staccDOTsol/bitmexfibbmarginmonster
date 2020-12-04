@@ -1,4 +1,6 @@
-﻿# bitmexfibbmarginmonster
+If you found rhis repo useful, consider clicking the sponsor button near the top :)
+ 
+ # bitmexfibbmarginmonster
  
  Consider using my Aff link:
  
